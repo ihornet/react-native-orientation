@@ -38,7 +38,14 @@ public class OrientationModule extends ReactContextBaseJavaModule implements Lif
                 Configuration newConfig = intent.getParcelableExtra("newConfig");
                 Log.d("receiver", String.valueOf(newConfig.orientation));
 
-                String orientationValue = newConfig.orientation == 1 ? "PORTRAIT" : "LANDSCAPE";
+                String orientationValue = "";
+                if (newConfig.orientation == 0) {
+                    orientationValue = "PORTRAIT";
+                } else if (newConfig.orientation == 1) {
+                    orientationValue = "LANDSCAPE-LEFT";
+                } else if (newConfig.orientation == 3) {
+                    orientationValue = "LANDSCAPE-RIGHT";
+                }
 
                 WritableMap params = Arguments.createMap();
                 params.putString("orientation", orientationValue);
