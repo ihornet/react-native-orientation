@@ -69,6 +69,7 @@ static UIInterfaceOrientationMask _orientation = UIInterfaceOrientationMaskAllBu
       break;
 
     default:
+      orientationStr = @"PORTRAIT";
 //       orientation is unknown, we try to get the status bar orientation
 //       switch ([[UIApplication sharedApplication] statusBarOrientation]) {
 //         case UIInterfaceOrientationPortrait:
